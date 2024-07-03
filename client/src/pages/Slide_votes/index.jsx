@@ -4,8 +4,26 @@ import { Bar, Pie } from 'react-chartjs-2';
 import { useSurveyStore } from '../../store';
 import style from './style.module.css';
 
-// רישום רכיבי Chart.js
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement);
+
+const translations = {
+  advice: "אני רוצה לייעץ לסטארטאפים",
+  collaboration: "יש לי רעיון לשיתוף פעולה עסקי עם אינוביסט",
+  contentEvents: "מעניין אותי התוכן והאירועים שהקהילה יכולה להציע",
+  entrepreneur: "אני יזם או יזמת בנשמה",
+  firstJob: "בחיפוש עבודה ראשונה בהייטק",
+  founder: "אני פאונדר/ית בסטארטאפ",
+  investor: "אני משקיע/ה ורוצה להצטרף למועדון האנג'לים",
+  lecture: "אשמח לשתף מהידע שלי ולהעביר הרצאה ליזמים והייטקיסטים",
+  networking: "אשמח להכיר את האנשים הנכונים להתייעץ איתם באתגרים מקצועיים",
+  nextJob: "בחיפוש אחר התפקיד הבא שלי",
+  promoteTechArea: "חשוב לי לקדם הייטק באזור",
+  promoteWomenTech: "חשוב לי לקדם נשים בהייטק",
+  recruiting: "אני מגייס עובדים ועובדות ואני רוצה להביא את האנשים הכי טובים",
+  resume: "רוצה להעביר קורות חיים רלוונטיים למשרות בחברה שלי",
+  startup: "מדגדג לי להקים או להצטרף לסטארטאפ",
+  teenagers: "אני רוצה להיפגש עם בני נוער ולחשוף אותם לעולמות ההייטק",
+};
 
 export default function SlideVotes() {
   const responses = useSurveyStore((state) => state.responses);
@@ -36,7 +54,7 @@ export default function SlideVotes() {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 4);
 
-    const labels = sortedBooleanCounts.map(([field]) => field);
+    const labels = sortedBooleanCounts.map(([field]) => translations[field] || field);
     const counts = sortedBooleanCounts.map(([, count]) => count);
     const backgroundColors = ['#002f34', '#007072', '#83e1d1', '#90e702'];
 
@@ -79,8 +97,8 @@ export default function SlideVotes() {
                 display: true,
               },
               title: {
-                display: true,
-                text: 'Top 4 Boolean Responses - Bar Chart',
+                // display: true,
+                text: 'ארבע התגובות שהצביעו להן הכי הרבה בצורת עמודות',
               },
             },
           }}
@@ -96,8 +114,8 @@ export default function SlideVotes() {
                 display: true,
               },
               title: {
-                display: true,
-                text: 'Top 4 Boolean Responses - Pie Chart',
+                // display: true,
+                text: 'ארבע התגובות שהצביעו להן הכי הרבה בצורת עוגה',
               },
             },
           }}
