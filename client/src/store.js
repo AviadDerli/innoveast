@@ -35,7 +35,7 @@ export const useSurveyStore = create((set, get) => ({
       [name]: value,
     },
   })),
-  responses:0,
+  responses: [],
   allResponses: [],
   setResponses: (responses) => set({ responses }),
   addResponse: (response) => {

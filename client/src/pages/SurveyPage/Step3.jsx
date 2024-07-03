@@ -75,6 +75,7 @@ export default function Step3() {
           </button>
         </div>
       </div>
+      <button onClick={()=>navigate('/from')}>לתוצאות</button>
     </div>
   );
 }

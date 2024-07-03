@@ -22,3 +22,11 @@
 html {
   // background-color: var(--primary-color);
 }
+
+.credit{
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  width: 60px;
+  filter: drop-shadow(1px 1px #000000);
+}
