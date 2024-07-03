@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSurveyStore } from '../../store';
 import style from './style.module.scss';
+import PageProgress from '../../components/SubmitButton/PageProgress';
 
 export default function Step1() {
     const navigate = useNavigate();
@@ -37,10 +38,11 @@ export default function Step1() {
 
     return (
         <div dir='rtl' className={style.survey_page}>
+            <PageProgress targetProgress={25} />
             <img className={style.logo} src='/logo2.png' alt='logo' />
-            
+
             <div className={style.container}>
-            <h1>שאלון היכרות</h1>
+                <h1>שאלון היכרות</h1>
 
                 <div className={style.form_group}>
                     <label>
@@ -54,6 +56,12 @@ export default function Step1() {
                         מספר הטלפון שלך?
                         <input type="tel" name="phone" value={servey.phone} onChange={handleChange} required />
                         {noPhone && <span className={style.error}>אנא הכנס מספר טלפון</span>}
+                    </label>
+                </div>
+                <div className={style.form_group}>
+                    <label>
+                        מגורים
+                        <input type="text" name="location" value={servey.location} onChange={handleChange} />
                     </label>
                 </div>
                 <div className={style.buttons}>

@@ -4,6 +4,7 @@ import { useSurveyStore } from '../../store';
 import style from './style.module.scss';
 import SubmitButton from '../../components/SubmitButton';
 import { socket } from '../../socket';
+import PageProgress from '../../components/SubmitButton/PageProgress';
 
 export default function Step3() {
   const navigate = useNavigate();
@@ -23,14 +24,10 @@ export default function Step3() {
 
   return (
     <div className={style.survey_page}>
+            <PageProgress targetProgress={100} />
+
       <img className={style.logo} src='/logo2.png' alt='logo' />
       <div className={style.container}>
-        <div className={style.form_group}>
-          <label>
-            מגורים
-            <input type="text" name="location" value={servey.location} onChange={handleChange} />
-          </label>
-        </div>
         <div className={style.form_group}>
           <label>
             מקום עבודה

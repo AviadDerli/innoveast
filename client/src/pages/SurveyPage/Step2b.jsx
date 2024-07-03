@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSurveyStore } from '../../store';
 import style from './style.module.scss';
+import PageProgress from '../../components/SubmitButton/PageProgress';
 
 export default function Step2b() {
   const navigate = useNavigate();
@@ -19,6 +20,8 @@ export default function Step2b() {
 
   return (
     <div className={style.survey_page}>
+            <PageProgress targetProgress={75} />
+
       <img className={style.logo} src='/logo2.png' alt='logo' />
       <div className={style.container}>
         <div className={style.checkbox_list}>

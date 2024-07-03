@@ -2,11 +2,11 @@ import React, { useEffect, useRef } from 'react'; // יבוא של React, useEff
 import { useSurveyStore } from '../../store'; // יבוא של useSurveyStore מה-store
 import WordCloud from 'wordcloud'; // יבוא של WordCloud.js
 import { useNavigate } from 'react-router-dom';
-
+import style from './style.module.scss';
 export default function SlideFrom() {
   const responses = useSurveyStore((state) => state.responses); // קבלת התגובות מה-store באמצעות useSurveyStore
   const wordCloudRef = useRef(null); // יצירת reference ל-DOM אלמנט כדי שנוכל להשתמש בו ב-WordCloud.js
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => { // שימוש ב-useEffect להפעלת הקוד כשהתגובות משתנות
     const locations = responses.map(response => response.location).filter(Boolean); // מיפוי התגובות להוצאת מקומות המגורים וסינון ערכים ריקים
@@ -22,7 +22,7 @@ const navigate = useNavigate()
       list: words, // רשימת המילים והספירות
       gridSize: Math.round(16 * window.innerWidth / 1024), // גודל הגריד בהתאמה לרוחב החלון
       weightFactor: size => Math.log2(size + 1) * 10, // פונקציה להתאמת הגודל בהתאם לספירה
-    //   fontFamily: 'Times, serif', // משפחת הפונטים
+      //   fontFamily: 'Times, serif', // משפחת הפונטים
       color: 'random-dark', // צבע אקראי כהה
       rotateRatio: 0.5, // יחס הסיבוב של המילים
       rotationSteps: 2, // שלבי הסיבוב (0 או 90 מעלות)
@@ -31,11 +31,11 @@ const navigate = useNavigate()
     });
   }, [responses]); // useEffect יפעל מחדש כל פעם שהתגובות ישתנו
 
-  return<>
-   <div ref={wordCloudRef} style={{ width: '100%', height: '600px' }}></div>
-   <button onClick={()=>navigate('/jobs')}>המשך</button>
-
-   </>
+  return (
+    <div onClick={() => navigate('/jobs')} className={style.container}>
+      <div ref={wordCloudRef} style={{ width: '100%', height: '600px' }}></div>
+    </div>
+  )
 }
 
 // --dark-primary-color: #002f34;
