@@ -1,0 +1,239 @@
+.survey_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--dark-primary-color);
+  color: var(--light-primary-color);
+  width: 100vw;
+  height: 100vh;
+
+  h1 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #000;
+    z-index: 1;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    z-index: 3;
+    text-shadow: 2px 2px #000;
+    align-items: center;
+
+    .form_group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 15px;
+
+      label {
+        margin-bottom: 5px;
+        order: 2;
+        /* Position label after input */
+      }
+
+      input,
+      textarea {
+        border: 3px solid var(--primary-color);
+        border-radius: 4px;
+        outline: none;
+        background-color: #002f34b7;
+        resize: none;
+        font-family: inherit;
+        font-size: inherit;
+        color: var(--text-color);
+        padding: 0;
+        margin: 8px 0 0 0;
+        box-shadow: 1px 1px 1px #000;
+        overflow: hidden;
+        width: 100%;
+        padding: 8px;
+        order: 1;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    z-index: 3;
+    text-shadow: 2px 2px #000;
+    align-items: center;
+    margin-top: 2rem;
+
+    .form_group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 15px;
+
+      label {
+        margin-bottom: 5px;
+        order: 2;
+        /* Position label after input */
+      }
+
+      input,
+      textarea {
+        border: 3px solid var(--primary-color);
+        border-radius: 4px;
+        outline: none;
+        background-color: #002f34b7;
+        resize: none;
+        font-family: inherit;
+        font-size: inherit;
+        color: var(--text-color);
+        padding: 0;
+        margin: 8px 0 0 0;
+        box-shadow: 1px 1px 1px #000;
+        overflow: hidden;
+        width: 100%;
+        padding: 8px;
+        order: 1;
+      }
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+
+}
+
+.checkbox {
+  border-bottom: 1px dashed var(--primary-color);
+  padding: 5px 5px 9px 5px;
+  margin: 0 0 10px;
+  display: block;
+}
+
+.logo {
+  position: absolute;
+  filter: blur(5.5px) brightness(0.3);
+  object-fit: cover;
+  width: 100%;
+  top: 30%;
+    // transform: rotate(90deg);
+
+  
+  // transform: translateX(50%, 50%);
+}
+
+.pen {
+  width: 30px;
+  position: absolute;
+  z-index: 1;
+  right: 26%;
+  pointer-events: none;
+  transform: rotate(68deg);
+  transition: all 0.05s ease; // הפחתנו את זמן המעבר לתנועה חלקה יותר
+}
+
+.checkbox input[type=checkbox] {
+  margin: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.checkbox label {
+  line-height: 26px;
+  padding-left: 35px;
+  margin: 0;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+
+// --dark-primary-color: #002f34;
+// --primary-color: #007072;
+// --light-primary-color: #83e1d1;
+// --text-color: #90e702;
+// --button-color: #07161b;
+.checkbox label:before,
+.checkbox label:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--primary-color);
+  box-shadow: 1px 1px 1px #000;
+  border-radius: 4px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: all 0.25s;
+}
+
+.checkbox label:after {
+  height: 10px;
+  width: 16px;
+  border-radius: 0 0 0 4px;
+  border: 5px solid var(--text-color);
+  box-shadow: none;
+  filter: drop-shadow(1px 1px 1px #000);
+  border-top: none;
+  border-right: none;
+  opacity: 0;
+  transform: rotate(-45deg);
+  top: 15px;
+  left: 6px;
+}
+
+.checkbox input[type=checkbox]:checked+label {
+  font-weight: 600;
+
+}
+
+.checkbox input[type=checkbox]:checked+label:before {
+  opacity: 0;
+  top: -10px;
+}
+
+.checkbox input[type=checkbox]:checked+label:after {
+  opacity: 1;
+  top: 6px;
+}
+
+.submit {
+  appearance: none;
+  /* הסרת סגנונות דפדפן ברירת מחדל */
+  background: none;
+  /* הסרת רקע */
+  border: none;
+  /* הסרת גבול */
+  padding: 0;
+  /* הסרת מרווח פנימי */
+  margin: 0;
+  /* הסרת מרווח חיצוני */
+  font: inherit;
+  /* שימוש בפונט של האלמנט האב */
+  color: inherit;
+  /* שימוש בצבע של האלמנט האב */
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  gap: 1em;
+
+  &>button {
+    @extend .submit;
+
+
+    &>img {
+      width: 20px;
+    
+    }
+  }
+}
+.back{
+  transform: rotate(90deg);
+}
+.next{
+  transform: rotate(-90deg);
+
+}

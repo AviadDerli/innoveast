@@ -1,0 +1,61 @@
+@import '../../index.scss';
+
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: var(--dark-primary-color);
+  text-shadow: 1px 1px 2px var(--light-primary-color);
+  background-color: var(--primary-color);
+  padding: 10%;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 90%;
+  max-width: 500px;
+  object-fit: cover;
+
+}
+
+p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-shadow: none;
+
+}
+
+.responses{
+  color: var(--text-color);
+  font-size: 3rem;
+}
+
+.start {
+  background-color: var(--button-color);
+  color: var(--text-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  box-shadow: -1px 3px 5px var(--light-primary-color);
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--dark-primary-color);
+  }
+}
+
+.qrCode {
+  margin-bottom: 1.5rem;
+}
