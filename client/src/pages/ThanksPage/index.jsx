@@ -8,7 +8,7 @@ export default function ThanksPage() {
             <div className={style.container}>
                 <div className={style.box}>
                     <div className={style.title}>
-                        <span className={style.block}>!</span>
+                        <span className={style.block}></span>
                         <h1>תודה רבה<span></span></h1>
                     </div>
                     <div className={style.role}>

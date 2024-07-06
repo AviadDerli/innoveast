@@ -203,36 +203,7 @@
     }
 }
 
-footer {
-    width: 1050px; // Increased size
-    height: 240px; // Increased size
-    background: var(--button-color);
-    position: absolute;
-    left: 0; // Adjusted for RTL
-    bottom: -240px; // Increased size
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: top 0.8s forwards;
-    animation-delay: 4s;
 
-    span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 36px; // Increased size
-        color: var(--text-color);
-
-        i {
-            margin-left: 75px; // Increased size
-            font-size: 66px; // Increased size
-            color: var(--text-color);
-            animation: icon 2s forwards;
-            animation-delay: 4s;
-            opacity: 0;
-        }
-    }
-}
 
 @keyframes top {
     0% {
@@ -262,3 +233,245 @@ footer {
         bottom: 0px;
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        .box {
+            width: 90%; // Adjusted size for mobile
+            height: auto; // Adjusted size for mobile
+            padding: 20px; // Added padding for mobile
+
+            .title {
+                height: auto; // Adjusted size for mobile
+
+                h1 {
+                    font-size: 48px; // Adjusted size for mobile
+
+                    span {
+                        width: 0px;
+                        height: 0px;
+                        border-radius: 50%;
+                        background: var(--button-color);
+                        animation: popInMobile 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+                        animation-delay: 2s;
+                        margin-left: 15px; // Increased size
+                        margin-top: -30px; // Increased size
+                        position: absolute;
+                        bottom: 30px; // Increased size
+                        left: -54px; // Increased size
+                    }
+                    
+                }
+
+                .block {
+                    animation: mainBlockMobile 2s cubic-bezier(.74, .06, .4, .92) forwards;
+                }
+            }
+
+            .role {
+                height: auto; // Adjusted size for mobile
+
+                p {
+                    font-size: 26px; // Adjusted size for mobile
+                    letter-spacing: 5px; // Adjusted size for mobile
+                }
+
+                .block {
+                    animation: secBlockMobile 2s cubic-bezier(.74, .06, .4, .92) forwards;
+                }
+            }
+        }
+    }
+}
+
+@keyframes mainBlockMobile {
+    0% {
+        width: 0%;
+        right: 0; // Adjusted for RTL
+    }
+
+    50% {
+        width: 100%;
+        right: 0; // Adjusted for RTL
+    }
+
+    100% {
+        width: 0;
+        right: 100%; // Adjusted for RTL
+    }
+}
+
+@keyframes secBlockMobile {
+    0% {
+        width: 0%;
+        right: 0; // Adjusted for RTL
+    }
+
+    50% {
+        width: 100%;
+        right: 0; // Adjusted for RTL
+    }
+
+    100% {
+        width: 0;
+        right: 100%; // Adjusted for RTL
+    }
+}
+
+@keyframes popInMobile {
+    0% {
+      width: 0px;
+      height: 0px;
+      background: #e9d856;
+      border: 0px solid #ddd;
+      opacity: 0;
+    }
+    50% {
+      width: 10px;
+      height: 10px;
+      background: #e9d856;
+      opacity: 1;
+      bottom: 45px;
+    }
+     65% {
+        width: 7px;
+      height: 7px;
+        bottom: 0px;
+        width: 15px
+     }
+     80% {
+        width: 10px;
+      height: 10px;
+        bottom: 20px
+     }
+    100% {
+      width: 7px;
+      height: 7px;
+      background: #e9d856;
+      border: 0px solid #222;
+      bottom: 13px;
+  
+    }
+  }
+
+  
+@media (max-width: 768px) {
+    .container {
+        .box {
+            width: 90%; // Adjusted size for mobile
+            height: auto; // Adjusted size for mobile
+            padding: 20px; // Added padding for mobile
+
+            .title {
+                height: auto; // Adjusted size for mobile
+
+                h1 {
+                    font-size: 48px; // Adjusted size for mobile
+                    span {
+                        animation: popInMobile 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+                        animation-delay: 2s;
+                        // התאם את הגדלים והמיקום כאן
+                        width: 0px;
+                        height: 0px;
+                        bottom: 15px;
+                        left: -35px;
+                    }
+                }
+
+               
+
+                .block {
+                    animation: mainBlockMobile 2s cubic-bezier(.74, .06, .4, .92) forwards;
+                }
+            }
+
+            .role {
+                height: auto; // Adjusted size for mobile
+
+                p {
+                    font-size: 26px; // Adjusted size for mobile
+                    letter-spacing: 5px; // Adjusted size for mobile
+                }
+
+                .block {
+                    animation: secBlockMobile 2s cubic-bezier(.74, .06, .4, .92) forwards;
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes mainBlockMobile {
+    0% {
+        width: 0%;
+        right: 0; // Adjusted for RTL
+    }
+
+    50% {
+        width: 100%;
+        right: 0; // Adjusted for RTL
+    }
+
+    100% {
+        width: 0;
+        right: 100%; // Adjusted for RTL
+    }
+}
+
+@keyframes secBlockMobile {
+    0% {
+        width: 0%;
+        right: 0; // Adjusted for RTL
+    }
+
+    50% {
+        width: 100%;
+        right: 0; // Adjusted for RTL
+    }
+
+    100% {
+        width: 0;
+        right: 100%; // Adjusted for RTL
+    }
+}
+
+@keyframes popInMobile {
+  0% {
+        width: 0px;
+        height: 0px;
+        background: var(--light-primary-color);
+        border: 0px solid #ddd;
+        opacity: 0;
+    }
+
+    50% {
+        width: 30px; // Increased size
+        height: 30px; // Increased size
+        background: var(--light-primary-color);
+        opacity: 1;
+        bottom: 135px; // Increased size
+    }
+
+    65% {
+        width: 21px; // Increased size
+        height: 21px; // Increased size
+        bottom: 0px;
+        width: 45px; // Increased size
+    }
+
+    80% {
+        width: 30px; // Increased size
+        height: 30px; // Increased size
+        bottom: 60px; // Increased size
+    }
+
+    100% {
+        width: 15px; // Increased size
+        height: 15px; // Increased size
+        background: var(--light-primary-color);
+        border: 0px solid #222;
+        bottom: 15px; // Increased size
+        left: -35px;
+    }
+  }
