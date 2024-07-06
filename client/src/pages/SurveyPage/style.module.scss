@@ -213,24 +213,3 @@
   cursor: pointer;
 }
 
-.buttons {
-  display: flex;
-  gap: 1em;
-
-  &>button {
-    @extend .submit;
-
-
-    &>img {
-      width: 20px;
-    
-    }
-  }
-}
-.back{
-  transform: rotate(90deg);
-}
-.next{
-  transform: rotate(-90deg);
-
-}

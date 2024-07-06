@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSurveyStore } from '../../store';
 import style from './style.module.scss';
 import PageProgress from '../../components/SubmitButton/PageProgress';
+import DirButton from '../../components/DirButton'
 
 export default function Step1() {
     const navigate = useNavigate();
@@ -64,12 +65,7 @@ export default function Step1() {
                         <input type="text" name="location" value={servey.location} onChange={handleChange} />
                     </label>
                 </div>
-                <div className={style.buttons}>
-                    <button onClick={handleSubmit}>
-                        הבא
-                        <img className={style.next} src='/angle.png' alt='next' />
-                    </button>
-                </div>
+                <DirButton dir='next' onClick={() => navigate('/survey/step2')} />
             </div>
         </div>
     );

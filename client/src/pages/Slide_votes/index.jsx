@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement } from 'chart.js';
+import 'chartjs-plugin-datalabels';
 import { Bar, Pie } from 'react-chartjs-2';
 import { useSurveyStore } from '../../store';
 import style from './style.module.css';
@@ -97,8 +98,20 @@ export default function SlideVotes() {
                 display: true,
               },
               title: {
-                // display: true,
+                display: true,
                 text: 'ארבע התגובות שהצביעו להן הכי הרבה בצורת עמודות',
+                font: {
+                  size: 18, // Adjust the size as needed
+                },
+              },
+              datalabels: {
+                anchor: 'end',
+                align: 'top',
+                formatter: (value) => value,
+                color: '#000',
+                font: {
+                  weight: 'bold',
+                },
               },
             },
           }}
@@ -114,8 +127,11 @@ export default function SlideVotes() {
                 display: true,
               },
               title: {
-                // display: true,
+                display: true,
                 text: 'ארבע התגובות שהצביעו להן הכי הרבה בצורת עוגה',
+                font: {
+                  size: 18, // Adjust the size as needed
+                },
               },
             },
           }}

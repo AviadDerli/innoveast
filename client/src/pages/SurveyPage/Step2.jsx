@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSurveyStore } from '../../store';
 import style from './style.module.scss';
 import PageProgress from '../../components/SubmitButton/PageProgress';
+import DirButton from '../../components/DirButton';
 
 export default function Step2() {
   const navigate = useNavigate();
@@ -58,16 +59,8 @@ export default function Step2() {
             <label htmlFor="networking">אשמח להכיר את האנשים הנכונים להתייעץ איתם באתגרים מקצועיים</label>
           </div>
         </div>
-        <div className={style.buttons}>
-          <button onClick={() => navigate('/survey/step2b')}>
-            <img className={style.next} src='/angle.png' alt='next' />
-            הבא
-          </button>
-          <button onClick={() => navigate('/survey/step1')}>
-            הקודם
-            <img className={style.back} src='/angle.png' alt='next' />
-          </button>
-        </div>
+          <DirButton dir='next' onClick={() => navigate('/survey/step2b')} />
+          <DirButton dir='back' onClick={() => navigate('/survey/step1')} />
       </div>
     </div>
   );

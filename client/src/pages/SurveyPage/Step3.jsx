@@ -5,6 +5,7 @@ import style from './style.module.scss';
 import SubmitButton from '../../components/SubmitButton';
 import { socket } from '../../socket';
 import PageProgress from '../../components/SubmitButton/PageProgress';
+import DirButton from '../../components/DirButton';
 
 export default function Step3() {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ export default function Step3() {
     e.preventDefault();
     socket.emit('newResponse', servey);
     console.log(servey);
+    navigate('/thanks');
   };
 
   return (
@@ -64,15 +66,10 @@ export default function Step3() {
             <textarea name="additionalInfo" value={servey.additionalInfo} onChange={handleChange}></textarea>
           </label>
         </div>
-        <div className={style.buttons}>
+        <DirButton dir='back' onClick={() => navigate('/survey/step2b')} />
+
           <div className={style.submit} onClick={handleSubmit}><SubmitButton /></div>
-          <button onClick={() => navigate('/survey/step2b')}>
-          הקודם
-            <img className={style.back} src='/angle.png' alt='arrow' />
-          </button>
-        </div>
       </div>
-      <button onClick={()=>navigate('/from')}>לתוצאות</button>
     </div>
   );
 }

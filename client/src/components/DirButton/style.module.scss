@@ -1,0 +1,47 @@
+@import '../../pages/SurveyPage/style.module.scss';
+
+.back,
+.next {
+    display: flex;
+    @extend .submit;
+    position: absolute;
+    bottom: 25px;
+
+    &>img {
+        width: 40px;
+    }
+}
+
+.back {
+    right: 40%;
+    &>img {
+        transform: rotate(90deg);
+    }
+}
+
+.next {
+    left: 40%;
+    &>img {
+        transform: rotate(-90deg);
+    }
+
+}
+
+@media screen and (min-width: 400px) {
+    .back {
+        right: 15%;
+    }
+    .next {
+        left: 15%;
+    }   
+    
+}
+@media screen and (max-width: 400px) {
+    .back {
+        right: 15%;
+    }
+    .next {
+        left: 15%;
+    }   
+    
+}
