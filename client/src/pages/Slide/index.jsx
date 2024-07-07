@@ -7,7 +7,7 @@ import { useSurveyStore } from '../../store';
 import QRCode from 'react-qr-code';
 
 export default function Slide() {
-    const [slide, setSlide] = useState("votes");
+    const [slide, setSlide] = useState("from");
     const responses = useSurveyStore((state) => state.responses);
 
     useEffect(() => {

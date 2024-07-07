@@ -16,12 +16,13 @@ export default function Location() {
     }, {}); // ערך התחלתי הוא אובייקט ריק
 
     const words = Object.entries(locationCounts).map(([word, count]) => [word, count]); // הפיכת האובייקט למערך של מערכים עם מילה ומספר הופעותיה
+    const colors = ['#7ad7c7', '#369c47', '#317269', '#83e1d1', '#84e2b7', '#84e2b7', '#7ed661', '#77cbaa', '#6ab597', '#5c9e84'];
 
     WordCloud(wordCloudRef.current, { // קריאה ל-WordCloud.js עם הפרמטרים הדרושים
       list: words, // רשימת המילים והספירות
       gridSize: Math.round(16 * window.innerWidth / 1024), // גודל הגריד בהתאמה לרוחב החלון
       weightFactor: size => Math.log2(size + 1) * 17, // פונקציה להתאמת הגודל בהתאם לספירה
-      color: 'random-light', // צבע אקראי כהה
+      color: (word, weight) => colors[Math.floor(Math.random() * colors.length)], // בחירת צבע רנדומלי מהמערך
       rotateRatio: 0.5, // יחס הסיבוב של המילים
       rotationSteps: 2, // שלבי הסיבוב (0 או 90 מעלות)
       backgroundColor: "002f34", // צבע הרקע של הענן מילים
