@@ -26,8 +26,18 @@ export default function Jobes() {
     const workplaceWords = Object.entries(workplacesCounts).map(([word, count]) => [word, count]);
 
     const words = [...jobWords, ...workplaceWords]; // איחוד הרשימות של תפקידים ומיקומים
-    const colors = ['#7ad7c7', '#369c47', '#317269', '#83e1d1', '#84e2b7', '#84e2b7', '#7ed661', '#77cbaa', '#6ab597', '#5c9e84'];
-
+    const colors = [
+      '#007072', /* Primary color */
+      '#83e1d1', /* Light primary color */
+      '#90e702', /* Text color */
+      '#005f60', /* Mid primary color */
+      '#a3e6e1', /* Light secondary color */
+      '#004e50', /* Dark primary color */
+      '#6ac5b9', /* Mid secondary color */
+      '#008a7a', /* Accent color */
+      '#6ca300'  /* Secondary text color */
+    ];
+    
 
     WordCloud(wordCloudRef.current, {
       list: words,

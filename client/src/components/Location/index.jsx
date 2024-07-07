@@ -16,8 +16,18 @@ export default function Location() {
     }, {}); // ערך התחלתי הוא אובייקט ריק
 
     const words = Object.entries(locationCounts).map(([word, count]) => [word, count]); // הפיכת האובייקט למערך של מערכים עם מילה ומספר הופעותיה
-    const colors = ['#7ad7c7', '#369c47', '#317269', '#83e1d1', '#84e2b7', '#84e2b7', '#7ed661', '#77cbaa', '#6ab597', '#5c9e84'];
-
+    const colors = [
+      '#007072', /* Primary color */
+      '#83e1d1', /* Light primary color */
+      '#90e702', /* Text color */
+      '#005f60', /* Mid primary color */
+      '#a3e6e1', /* Light secondary color */
+      '#004e50', /* Dark primary color */
+      '#6ac5b9', /* Mid secondary color */
+      '#008a7a', /* Accent color */
+      '#6ca300'  /* Secondary text color */
+    ];
+    
     WordCloud(wordCloudRef.current, { // קריאה ל-WordCloud.js עם הפרמטרים הדרושים
       list: words, // רשימת המילים והספירות
       gridSize: Math.round(16 * window.innerWidth / 1024), // גודל הגריד בהתאמה לרוחב החלון
