@@ -65,7 +65,7 @@ export default function Step1() {
                         <input type="text" name="location" value={servey.location} onChange={handleChange} />
                     </label>
                 </div>
-                <DirButton dir='next' onClick={() => navigate('/survey/step2')} />
+                <DirButton dir='next' onClick={handleSubmit} />
             </div>
         </div>
     );

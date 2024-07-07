@@ -1,0 +1,76 @@
+@import '../../index.scss';
+
+.container {
+    background-color: var(--dark-primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3em;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.header {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &>h2 {
+        color: #fff;
+        font-size: 24px;
+    }
+}
+
+.responses {
+    color: var(--light-primary-color);
+    margin-left: 10px;
+    font-size: 36px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+
+    .logoContainer {
+        height: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+
+        &>img {
+            width: 150px;
+            object-fit: cover;
+        }
+    }
+
+    .qr{
+        height: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .qrCodeContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 10px;
+        width: 120px;
+        height: 120px;
+        background-color: #fff;
+
+    }
+
+}
+
+.content{
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:  1em;
+}

@@ -1,0 +1,26 @@
+@import '../../index.scss';
+
+.header {
+    border-bottom: 1px solid var(--primary-color);
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: inherit;
+
+    .text {
+        display: flex;
+        flex-direction: column;
+
+        &>p {
+            font-size: 12px;
+            margin: 0;
+        }
+    }
+
+    &>img {
+        height: 30px;
+        object-fit: cover;
+    }
+}

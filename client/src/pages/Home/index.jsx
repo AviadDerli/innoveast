@@ -18,13 +18,7 @@ export default function Home() {
             <p>מספר האנשים שענו על השאלון:
                 <span className={style.responses}> {responses.length}</span>
             </p>
-            <QRCode
-                size={256}
-                style={{ height: "auto", maxWidth: "40%", width: "40%" }}
-                value={"https://survey.vaccines.gov.il/survey"}
-                viewBox={`0 0 256 256`}
-                className={style.qrCode}
-            />
+      
             <button className={style.start} onClick={() => nav('/survey/step1')}>התחל שאלון</button>
         </div>
     )
